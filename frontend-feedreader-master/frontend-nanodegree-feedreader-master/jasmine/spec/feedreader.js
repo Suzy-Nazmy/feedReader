@@ -43,22 +43,28 @@ $(function() {
     });
 
   // Testing suite of Menu    
-  describe("the menu", function () {
- // Pre-define elements needed for testing hiding/showing of the menu
-	const body = $("body"),
-		  menuIcon = $(".menu-icon-link");
-	
-	it("menu element is hidden by default", function () {
-		expect(body.className).toContain(".menu-hidden");
-	});
+   describe('The menu', function() {
+        //variable for selecting body element.
+        const body = $('body');
+        //variable for selecting menu icon (click event target).
+        const menuIcon = $('.menu-icon-link');
+
+        //Test ensures that menu is hidden by default.
+        it('menu is hidden by clicked', function() {
+            //on loading the web page, menu is hidden by default.
+            expect(body.hasClass('menu-hidden')).toBe(true);
+        });
 	
 	
      // Make sure menu icon toggles hide/show on clicking
 	it("the menu changes visibility by clicked", function () {
-		expect(body.hasClass("menu-hidden")).toggle();
-	});
-});
-
+		menuIcon.click();
+		  expect(body.hasClass('menu-hidden')).not.toBe(true);
+		
+		menuIcon.click();
+		  expect(body.hasClass('menu-hidden')).toBe(true);
+        });
+    });
     // Testing suite of Initial Entries
 describe("Initial Entries", function () {
 	
@@ -111,3 +117,4 @@ describe("New Feed Selection", function () {
 	 });
    });     
 }());
+
