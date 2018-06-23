@@ -30,6 +30,8 @@ $(function() {
         it('allFeeds feed URL are defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
+		expect(feed.url.length).not.toBe(0);
+		expect(feed.url).toMatch(/^(http|https):\/\//);
             });
         });
   
@@ -38,6 +40,7 @@ $(function() {
 		 it('allFeeds feed name are defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
+		expect(feed.name.length).not.toBe(0);
             });
         });
     });
