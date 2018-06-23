@@ -107,8 +107,7 @@ describe("New Feed Selection", function () {
             });
         });
 
-     // Make sure when new feed is loaded using loadFeed function,
-    // the content changes
+     //  the content changes when new feed is loaded 
 	
 	it("the content actually changes", function (done) {
 		expect(initFeedSelection).not.toBe(newFeed);
